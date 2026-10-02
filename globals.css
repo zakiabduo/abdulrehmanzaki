@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 246 247 249; --surface: 255 255 255; --ink: 20 33 61;
+  --muted: 92 102 124; --line: 223 227 235; --accent: 38 84 220;
+}
+.dark {
+  --bg: 15 20 32; --surface: 22 29 45; --ink: 233 237 246;
+  --muted: 148 158 180; --line: 40 50 72; --accent: 120 156 255;
+}
+   html { scroll-padding-top: 5rem; overflow-x: clip; max-width: 100%; overscroll-behavior-x: none; }
+   body { @apply bg-bg text-ink font-sans antialiased; overflow-x: hidden; overflow-x: clip; max-width: 100%;
+  padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+:focus-visible { outline: 2px solid rgb(var(--accent)); outline-offset: 3px; border-radius: 6px; }
+.container-x { @apply mx-auto w-full max-w-6xl px-5 sm:px-8 2xl:max-w-7xl; }
+.section { padding-block: clamp(4.5rem, 9vw, 7.5rem); }
+.h-display { font-family: var(--font-display); font-size: clamp(2.5rem, 8vw + 0.5rem, 7rem); line-height: 0.98; letter-spacing: -0.03em; }
+.h-section { font-family: var(--font-display); font-size: clamp(1.75rem, 3.5vw + 0.5rem, 3.25rem); letter-spacing: -0.02em; line-height: 1.05; }
+.btn { @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-6 text-sm font-medium transition-transform active:scale-95; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+@media (prefers-reduced-motion: reduce) { .marquee-track, .text-gradient, .spin-slow, .animate-ping, .animate-pulse { animation: none !important; } * { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+@keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes gradient-shift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+.text-gradient { background: linear-gradient(90deg, rgb(var(--ink)), rgb(var(--accent)), rgb(var(--ink))); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent; animation: gradient-shift 6s ease infinite; }
+.marquee-track { display: flex; width: max-content; animation: marquee 35s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.bg-grid { background-image: linear-gradient(rgb(var(--line) / 0.7) 1px, transparent 1px), linear-gradient(90deg, rgb(var(--line) / 0.7) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse at center, black 25%, transparent 75%); -webkit-mask-image: radial-gradient(ellipse at center, black 25%, transparent 75%); }
+
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+.spin-slow { animation: spin-slow 6s linear infinite; }
