@@ -7,12 +7,12 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/abdulrehmanzaki/",
   github: "", // TODO: add GitHub URL
   cv: "/cv.pdf", // TODO: put your CV at public/cv.pdf
-  siteUrl: "https://your-domain.com", // TODO: replace
+  siteUrl: "https://abdulrehman-zaki.vercel.app/", // TODO: replace
 };
 
 export const stats = [
   { label: "Years studying software engineering", value: 4 },
-  { label: "Projects built", value: 6 }, // TODO: update
+  { label: "Projects built", value: 3 }, // TODO: update
   { label: "Core disciplines", value: 3 },
 ];
 
